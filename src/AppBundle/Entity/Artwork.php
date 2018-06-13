@@ -61,6 +61,10 @@ class Artwork
      */
     private $museum;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Artist", inversedBy="artworks")
+     */
+    private $artists;
 
     /**
      * Get id
