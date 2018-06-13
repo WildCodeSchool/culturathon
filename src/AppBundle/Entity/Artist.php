@@ -42,6 +42,16 @@ class Artist
      */
     private $nickName;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Museum", mappedBy="artists")
+     */
+    private $museums;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Artwork", mappedBy="artists")
+     */
+    private $artworks;
+
 
     /**
      * Get id
