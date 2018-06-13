@@ -6,6 +6,7 @@
   "directories": {
     "test": "tests"
   },
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,6 +19,7 @@
   "bugs": {
     "url": "https://github.com/cyrildo/culturathon/issues"
   },
+
   "homepage": "https://github.com/cyrildo/culturathon#readme",
   "dependencies": {
     "@symfony/webpack-encore": "^0.20.1"
