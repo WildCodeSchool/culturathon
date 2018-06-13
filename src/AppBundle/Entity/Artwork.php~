@@ -56,6 +56,11 @@ class Artwork
      */
     private $description;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Museum", inversedBy="artworks")
+     */
+    private $museum;
+
 
     /**
      * Get id
@@ -187,4 +192,3 @@ class Artwork
         return $this->description;
     }
 }
-

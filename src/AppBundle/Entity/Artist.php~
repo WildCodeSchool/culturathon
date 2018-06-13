@@ -125,3 +125,4 @@ class Artist
         return $this->nickName;
     }
 }
+
