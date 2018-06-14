@@ -1,45 +1,14 @@
 {% extends "base.html.twig"%}
 
-
-
-    {% block body %}
+{% block body %}
     
         {% include 'include/navbar.html.twig' %}
-        <h1>Page d'accueil</h1>
 
 
-    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-
-        <ul>
-            <li>
-                <a href="{{ path('fos_user_security_logout') }}">Logout</a>
-            </li>
-            <li>
-                <a href="{{ path('user_index') }}">Voir tous les utilisateurs</a>
-            </li>
-        </ul>
-
-    {% else %}
-
-        <ul>
-            <li>
-                <a href="{{ path('fos_user_security_login') }}">Login</a>
-            </li>
-
-            <li>
-                <a href="{{ path('fos_user_registration_register') }}">S'enregistrer</a>
-            </li>
-        </ul>
-
-    {% endif %}
         {% block content %}
             <img class="rounded mx-auto d-block pt-4" src="https://www.louvre.fr/sites/default/files/imagecache/940x500/medias/medias_images/images/louvre-carrousel-eugene-delacroix-le-28-juillet-1830-la-liberte-guidant-le-peuple-detail.jpg?1519988083" alt="">
         {%  endblock %}
+
+
         {% include 'include/footer.html.twig' %}
-
-
-
-    
-
-
 {% endblock %}
