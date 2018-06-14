@@ -223,5 +223,45 @@ class Emotion
     {
         return $this->red;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->aues = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add aue
+     *
+     * @param \AppBundle\Entity\ArtworkUserEmotion $aue
+     *
+     * @return Emotion
+     */
+    public function addAue(\AppBundle\Entity\ArtworkUserEmotion $aue)
+    {
+        $this->aues[] = $aue;
+
+        return $this;
+    }
+
+    /**
+     * Remove aue
+     *
+     * @param \AppBundle\Entity\ArtworkUserEmotion $aue
+     */
+    public function removeAue(\AppBundle\Entity\ArtworkUserEmotion $aue)
+    {
+        $this->aues->removeElement($aue);
+    }
+
+    /**
+     * Get aues
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAues()
+    {
+        return $this->aues;
+    }
+}

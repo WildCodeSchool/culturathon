@@ -274,4 +274,38 @@ class Artwork
     {
         return $this->artists;
     }
+
+    /**
+     * Add aue
+     *
+     * @param \AppBundle\Entity\ArtworkUserEmotion $aue
+     *
+     * @return Artwork
+     */
+    public function addAue(\AppBundle\Entity\ArtworkUserEmotion $aue)
+    {
+        $this->aues[] = $aue;
+
+        return $this;
+    }
+
+    /**
+     * Remove aue
+     *
+     * @param \AppBundle\Entity\ArtworkUserEmotion $aue
+     */
+    public function removeAue(\AppBundle\Entity\ArtworkUserEmotion $aue)
+    {
+        $this->aues->removeElement($aue);
+    }
+
+    /**
+     * Get aues
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAues()
+    {
+        return $this->aues;
+    }
 }
