@@ -26,16 +26,17 @@
         </table>
         <div class="text-center">
 
-        <div class="btn btn-info">
-            <a href="{{ path('user_index') }}">Back to the list</a>
-        </div>
+            <div class="btn btn-info">
 
-        <div class="btn btn-info">
-            <a href="{{ path('user_edit', { 'id': user.id }) }}">Edit</a>
-        </div>
-        {{ form_start(delete_form) }}
-        <input class="btn btn-info mt-2 " type="submit" value="Delete">
-        {{ form_end(delete_form) }}
+                <a href="{{ path('user_index') }}">Back to the list</a>
+            </div>
+
+            <div class="btn btn-info">
+                <a href="{{ path('user_edit', { 'id': user.id }) }}">Edit</a>
+            </div>
+            {{ form_start(delete_form) }}
+            <input class="btn btn-info mt-2 " type="submit" value="Delete">
+            {{ form_end(delete_form) }}
         </div>
     </div>
 {% endblock %}
