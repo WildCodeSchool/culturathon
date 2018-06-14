@@ -61,6 +61,10 @@ class Artwork
      */
     private $museum;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Artist", inversedBy="artworks")
+     */
+    private $artists;
 
     /**
      * Get id
@@ -190,5 +194,29 @@ class Artwork
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set museum
+     *
+     * @param \AppBundle\Entity\Museum $museum
+     *
+     * @return Artwork
+     */
+    public function setMuseum(\AppBundle\Entity\Museum $museum = null)
+    {
+        $this->museum = $museum;
+
+        return $this;
+    }
+
+    /**
+     * Get museum
+     *
+     * @return \AppBundle\Entity\Museum
+     */
+    public function getMuseum()
+    {
+        return $this->museum;
     }
 }

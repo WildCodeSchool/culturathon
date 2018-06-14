@@ -69,11 +69,24 @@
 /*!**************************!*\
   !*** ./assets/js/app.js ***!
   \**************************/
-/*! dynamic exports provided */
+/*! no exports provided */
 /*! all exports used */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+throw new Error("Cannot find module \"jquery\"");
 
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).ready(function () {
+
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default()('span').click(function () {
+        __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.overlay').toggleClass('anim');
+    });
+
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.animation').click(function () {
+        __WEBPACK_IMPORTED_MODULE_0_jquery___default()('.anim').toggleClass('reverse-animation');
+    });
+});
 
 /***/ })
 

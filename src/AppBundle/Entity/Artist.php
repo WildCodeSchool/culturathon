@@ -134,4 +134,88 @@ class Artist
     {
         return $this->nickName;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->museums = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->artworks = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add museum
+     *
+     * @param \AppBundle\Entity\Museum $museum
+     *
+     * @return Artist
+     */
+    public function addMuseum(\AppBundle\Entity\Museum $museum)
+    {
+        $this->museums[] = $museum;
+
+        return $this;
+    }
+
+    /**
+     * Remove museum
+     *
+     * @param \AppBundle\Entity\Museum $museum
+     */
+    public function removeMuseum(\AppBundle\Entity\Museum $museum)
+    {
+        $this->museums->removeElement($museum);
+    }
+
+    /**
+     * Get museums
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMuseums()
+    {
+        return $this->museums;
+    }
+
+    /**
+     * Add artwork
+     *
+     * @param \AppBundle\Entity\Artwork $artwork
+     *
+     * @return Artist
+     */
+    public function addArtwork(\AppBundle\Entity\Artwork $artwork)
+    {
+        $this->artworks[] = $artwork;
+
+        return $this;
+    }
+
+    /**
+     * Remove artwork
+     *
+     * @param \AppBundle\Entity\Artwork $artwork
+     */
+    public function removeArtwork(\AppBundle\Entity\Artwork $artwork)
+    {
+        $this->artworks->removeElement($artwork);
+    }
+
+    /**
+     * Get artworks
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getArtworks()
+    {
+        return $this->artworks;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->firstName . ' ' . $this->lastName;
+    }
 }
