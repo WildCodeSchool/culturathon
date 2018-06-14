@@ -67,6 +67,12 @@ class User extends BaseUser
      */
     private $role;
 
+    /**
+     * @var
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ArtworkUserEmotion", mappedBy="user")
+     */
+    private $aues;
+
 
     /**
      * Get id
@@ -174,4 +180,3 @@ class User extends BaseUser
         return $this->role;
     }
 }
-
