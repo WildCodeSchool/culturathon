@@ -16,7 +16,6 @@
   "devDependencies": {
     "webpack-notifier": "^1.6.0"
   },
-
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,5 +29,4 @@
     "url": "https://github.com/cyrildo/culturathon/issues"
   },
   "homepage": "https://github.com/cyrildo/culturathon#readme"
-
 }
