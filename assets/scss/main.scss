@@ -32,14 +32,14 @@ body {
         left: 0;
         bottom: 0;
         animation: menu-anim 1.5s 1 ease-out normal;
-        width: 14%;
+        width: 11em;
         transition: all 0.5s ease;
 
         &.reverse-anim {
           left: 0;
           bottom: 0;
           animation: menu-anim 1.5s 1 ease-out reverse;
-          width: 14%;
+          width: 11em;
           transition: all 0.5s ease;
         }
       }
@@ -50,8 +50,7 @@ body {
         margin-top: 8em;
         padding-left: 10%;
         margin-left: -10px;
-        font-size: 1.2em;
-        font-weight: 800;
+        font-size: calc(18px + 6 * (100vw - 400px) / 1200);
 
         li {
           margin: 10px 0;
@@ -123,7 +122,7 @@ body {
       100% {
         bottom: 0;
         left: 0;
-        width: 14%;
+        width: 11em;
       }
     }
   }
@@ -242,14 +241,10 @@ body {
     float: none;
     margin: 0 auto 20px;
   }
-}
-.glyphicons glyphicons-user .ico{
-  width: 45px;
-  height: 45px;
-}
 
 .artwork {
   background-image: url("/images/hin-bong.jpg");
   background-repeat: no-repeat;
   background-size: auto;
 }
+
