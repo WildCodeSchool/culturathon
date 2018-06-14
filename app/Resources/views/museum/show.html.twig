@@ -1,20 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <div class="container">
     <h1>Museum</h1>
 
-    <table>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+        <th scope="row">Id</th>
+        <th scope="row">Name</th>
+        <th scope="row">City</th>
+        </thead>
         <tbody>
             <tr>
-                <th>Id</th>
                 <td>{{ museum.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
                 <td>{{ museum.name }}</td>
-            </tr>
-            <tr>
-                <th>City</th>
                 <td>{{ museum.city }}</td>
             </tr>
         </tbody>
@@ -29,8 +28,9 @@
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input class="btn-dark"  type="submit" value="Delete">
             {{ form_end(delete_form) }}
         </li>
     </ul>
+    </div>
 {% endblock %}
