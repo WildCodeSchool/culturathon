@@ -1,47 +1,49 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Artworks list</h1>
+    <div class="container">
+        <h1 class="text-center">Artworks list</h1>
 
-    <table>
-        <thead>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Size</th>
-                <th>Technique</th>
-                <th>Description</th>
-                <th>Actions</th>
+                <th scope="row">Id</th>
+                <th scope="row">Name</th>
+                <th scope="row">Date</th>
+                <th scope="row">Size</th>
+                <th scope="row">Technique</th>
+                <th scope="row">Description</th>
+                <th scope="row">Actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for artwork in artworks %}
-            <tr>
-                <td><a href="{{ path('artwork_show', { 'id': artwork.id }) }}">{{ artwork.id }}</a></td>
-                <td>{{ artwork.name }}</td>
-                <td>{% if artwork.date %}{{ artwork.date|date('Y-m-d') }}{% endif %}</td>
-                <td>{{ artwork.size }}</td>
-                <td>{{ artwork.technique }}</td>
-                <td>{{ artwork.description }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('artwork_show', { 'id': artwork.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('artwork_edit', { 'id': artwork.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for artwork in artworks %}
+                <tr>
+                    <td><a href="{{ path('artwork_show', { 'id': artwork.id }) }}">{{ artwork.id }}</a></td>
+                    <td>{{ artwork.name }}</td>
+                    <td>{% if artwork.date %}{{ artwork.date|date('Y-m-d') }}{% endif %}</td>
+                    <td>{{ artwork.size }}</td>
+                    <td>{{ artwork.technique }}</td>
+                    <td>{{ artwork.description }}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('artwork_show', { 'id': artwork.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('artwork_edit', { 'id': artwork.id }) }}">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('artwork_new') }}">Create a new artwork</a>
-        </li>
-    </ul>
+        <ul>
+            <li>
+                <a href="{{ path('artwork_new') }}">Create a new artwork</a>
+            </li>
+        </ul>
+    </div>
 {% endblock %}
