@@ -1,7 +1,12 @@
 {% extends "base.html.twig"%}
 
-{% block body %}
-    <h1>Page d'accueil</h1>
+
+
+    {% block body %}
+    
+        {% include 'include/navbar.html.twig' %}
+        <h1>Page d'accueil</h1>
+
 
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
 
@@ -27,6 +32,14 @@
         </ul>
 
     {% endif %}
+        {% block content %}
+            <img class="rounded mx-auto d-block pt-4" src="https://www.louvre.fr/sites/default/files/imagecache/940x500/medias/medias_images/images/louvre-carrousel-eugene-delacroix-le-28-juillet-1830-la-liberte-guidant-le-peuple-detail.jpg?1519988083" alt="">
+        {%  endblock %}
+        {% include 'include/footer.html.twig' %}
+
+
+
+    
 
 
 {% endblock %}
