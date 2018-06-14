@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <ul>
+                {% for museum in museums %}
+                    <li>{{ museum.name }} {{ museum.city }} <a
+                                href="{{ path('visitor_museum_show', { 'id': museum.id }) }}"
+                                class="btn btn-info">show</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

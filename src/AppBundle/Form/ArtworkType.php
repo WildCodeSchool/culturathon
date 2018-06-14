@@ -3,6 +3,7 @@
 namespace AppBundle\Form;
 
 use AppBundle\Entity\Artist;
+use AppBundle\Entity\Museum;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -49,7 +50,9 @@ class ArtworkType extends AbstractType
                     'required' => true,
                 ]
             ])
-            ->add('image')
+            ->add('image', TextType::class, [
+                'label' => 'Ajouté une image'
+            ])
             ->add('artists', EntityType::class, [
                 'required' => false,
                 'class' => Artist::class,
@@ -57,6 +60,15 @@ class ArtworkType extends AbstractType
                 'placeholder' => 'Choisir un artiste',
                 'choice_label' => function ($artist) {
                     return $artist->getFirstName() . ' ' . $artist->getLastName();
+                }
+            ])
+            ->add('museum', EntityType::class, [
+                'required' => false,
+                'class' => Museum::class,
+                'label' => 'Musée',
+                'placeholder' => 'Choisir le musée',
+                'choice_label' => function ($museum) {
+                    return $museum->getName();
                 }
             ]);
     }
