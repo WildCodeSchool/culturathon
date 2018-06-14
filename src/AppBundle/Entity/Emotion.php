@@ -62,7 +62,7 @@ class Emotion
      */
     public function setName($name)
     {
-        $this->Name = $name;
+        $this->name = $name;
 
         return $this;
     }

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Emotions list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Color</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for emotion in emotions %}
+            <tr>
+                <td><a href="{{ path('emotion_show', { 'id': emotion.id }) }}">{{ emotion.id }}</a></td>
+                <td>{{ emotion.name }}</td>
+                <td>{{ emotion.color }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('emotion_show', { 'id': emotion.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('emotion_edit', { 'id': emotion.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('emotion_new') }}">Create a new emotion</a>
+        </li>
+    </ul>
+{% endblock %}
