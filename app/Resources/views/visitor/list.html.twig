@@ -1,6 +1,7 @@
 {% include 'base.html.twig' %}
 
 {% block body %}
+    <body class="artwork">
     <div class="container">
         <div class="row">
             {% for artwork in artworks %}
@@ -21,5 +22,6 @@
             {% endfor %}
         </div>
     </div>
+    </body>
 {% endblock %}
 

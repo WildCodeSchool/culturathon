@@ -22,46 +22,18 @@ class Emotion
     private $id;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="likes", type="integer", nullable=true)
+     * @ORM\Column(name="name", type="string", nullable=true)
      */
-    private $likes;
+    private $name;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="yellow", type="integer", nullable=true)
+     * @ORM\Column(name="color", type="string", nullable=true)
      */
-    private $yellow;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="green", type="integer", nullable=true)
-     */
-    private $green;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="blue", type="integer", nullable=true)
-     */
-    private $blue;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="violet", type="integer", nullable=true)
-     */
-    private $violet;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="red", type="integer", nullable=true)
-     */
-    private $red;
+    private $color;
 
     /**
      * @var
@@ -80,149 +52,55 @@ class Emotion
         return $this->id;
     }
 
+
     /**
-     * Set likes
+     * Set name
      *
-     * @param integer $likes
+     * @param string $name
      *
      * @return Emotion
      */
-    public function setLikes($likes)
+    public function setName($name)
     {
-        $this->likes = $likes;
+        $this->Name = $name;
 
         return $this;
     }
 
     /**
-     * Get likes
+     * Get name
      *
-     * @return int
+     * @return string
      */
-    public function getLikes()
+    public function getName()
     {
-        return $this->likes;
+        return $this->name;
     }
 
     /**
-     * Set yellow
+     * Set color
      *
-     * @param integer $yellow
+     * @param string $color
      *
      * @return Emotion
      */
-    public function setYellow($yellow)
+    public function setColor($color)
     {
-        $this->yellow = $yellow;
+        $this->color = $color;
 
         return $this;
     }
 
     /**
-     * Get yellow
+     * Get color
      *
      * @return int
      */
-    public function getYellow()
+    public function getColor()
     {
-        return $this->yellow;
+        return $this->color;
     }
 
-    /**
-     * Set green
-     *
-     * @param integer $green
-     *
-     * @return Emotion
-     */
-    public function setGreen($green)
-    {
-        $this->green = $green;
-
-        return $this;
-    }
-
-    /**
-     * Get green
-     *
-     * @return int
-     */
-    public function getGreen()
-    {
-        return $this->green;
-    }
-
-    /**
-     * Set blue
-     *
-     * @param integer $blue
-     *
-     * @return Emotion
-     */
-    public function setBlue($blue)
-    {
-        $this->blue = $blue;
-
-        return $this;
-    }
-
-    /**
-     * Get blue
-     *
-     * @return int
-     */
-    public function getBlue()
-    {
-        return $this->blue;
-    }
-
-    /**
-     * Set violet
-     *
-     * @param integer $violet
-     *
-     * @return Emotion
-     */
-    public function setViolet($violet)
-    {
-        $this->violet = $violet;
-
-        return $this;
-    }
-
-    /**
-     * Get violet
-     *
-     * @return int
-     */
-    public function getViolet()
-    {
-        return $this->violet;
-    }
-
-    /**
-     * Set red
-     *
-     * @param integer $red
-     *
-     * @return Emotion
-     */
-    public function setRed($red)
-    {
-        $this->red = $red;
-
-        return $this;
-    }
-
-    /**
-     * Get red
-     *
-     * @return int
-     */
-    public function getRed()
-    {
-        return $this->red;
-    }
     /**
      * Constructor
      */
