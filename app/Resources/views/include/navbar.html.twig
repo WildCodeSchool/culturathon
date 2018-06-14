@@ -5,8 +5,17 @@
      </span>
      <div class="overlay">
         <ul>
-            <li><a href="#">Connexion</a></li>
-            <li><a href="#">Registre</a></li>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+               <dev>
+                   <a href="{{ path('fos_user_security_logout') }}"><span class="fa fa-sign-out ico"></span></a>
+                   <a href="{{ path('user_index') }}"><span class="fa fa-users ico"></span></a>
+               </dev>
+            {% else %}
+               <dev>
+                   <a href="{{ path('fos_user_security_login') }}"><span class="fa fa-sign-in ico"></span></a>
+                   <a href="{{ path('fos_user_registration_register') }}"><span class="fa fa-user-plus ico"></span></a>
+               </dev>
+            {% endif %}
             <li><a href="#">Musée</a></li>
             <li><a href="#">Artiste</a></li>
             <li><a href="#">Oeuvres d'art</a></li>
