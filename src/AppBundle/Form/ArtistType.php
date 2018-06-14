@@ -15,16 +15,10 @@ class ArtistType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-<<<<<<< HEAD
         $builder
             ->add('firstName', TextType::class, array('attr' => array('required' => true)))
             ->add('lastName', TextType::class, array('attr' => array('required' => true)))
             ->add('nickName', TextType::class, array('attr' => array('required' => true)));
-=======
-        $builder->add('firstName')
-                ->add('lastName')
-                ->add('nickName');
->>>>>>> e8365f6287ac0f9babcafea552202ce919d7c8bd
     }/**
      * {@inheritdoc}
      */
