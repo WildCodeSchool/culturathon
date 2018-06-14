@@ -36,4 +36,6 @@ class ArtworkController extends Controller
             'artworks' => $artworks,
         ));
     }
+
+    
 }
