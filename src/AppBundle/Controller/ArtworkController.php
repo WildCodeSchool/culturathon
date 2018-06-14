@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Artwork controller.
  *
- * @Route("artwork")
+ * @Route("admin/artwork")
  */
 class ArtworkController extends Controller
 {

@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Artist controller.
  *
- * @Route("artist")
+ * @Route("admin/artist")
  */
 class ArtistController extends Controller
 {
