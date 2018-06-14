@@ -5,6 +5,8 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+
 
 class ArtistType extends AbstractType
 {
@@ -13,7 +15,10 @@ class ArtistType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('firstName')->add('lastName')->add('nickName');
+        $builder
+            ->add('firstName', TextType::class, array('attr' => array('required' => true)))
+            ->add('lastName', TextType::class, array('attr' => array('required' => true)))
+            ->add('nickName', TextType::class, array('attr' => array('required' => true)));
     }/**
      * {@inheritdoc}
      */
