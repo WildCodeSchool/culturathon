@@ -13,7 +13,8 @@ class MuseumType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('city');
+        $builder->add('name')
+                ->add('city');
     }/**
      * {@inheritdoc}
      */

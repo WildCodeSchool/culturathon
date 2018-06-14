@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+
 class ArtistType extends AbstractType
 {
     /**
@@ -13,7 +14,9 @@ class ArtistType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('firstName')->add('lastName')->add('nickName');
+        $builder->add('firstName')
+                ->add('lastName')
+                ->add('nickName');
     }/**
      * {@inheritdoc}
      */

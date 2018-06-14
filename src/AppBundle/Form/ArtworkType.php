@@ -5,6 +5,7 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class ArtworkType extends AbstractType
 {
@@ -13,7 +14,15 @@ class ArtworkType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('date')->add('size')->add('technique')->add('description');
+        $builder->add('name')
+                ->add('date', DateType::class, array(
+                    'label'=>'Date',
+                    'widget'=>'single_text',
+                    'format' => 'yyyy-MM-dd'))
+                ->add('size')
+                ->add('technique')
+                ->add('description')
+                ->add('artists');
     }/**
      * {@inheritdoc}
      */

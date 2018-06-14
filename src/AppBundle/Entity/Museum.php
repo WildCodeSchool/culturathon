@@ -143,4 +143,46 @@ class Museum
     {
         return $this->artworks;
     }
+
+    /**
+     * Add artist
+     *
+     * @param \AppBundle\Entity\Artist $artist
+     *
+     * @return Museum
+     */
+    public function addArtist(\AppBundle\Entity\Artist $artist)
+    {
+        $this->artists[] = $artist;
+
+        return $this;
+    }
+
+    /**
+     * Remove artist
+     *
+     * @param \AppBundle\Entity\Artist $artist
+     */
+    public function removeArtist(\AppBundle\Entity\Artist $artist)
+    {
+        $this->artists->removeElement($artist);
+    }
+
+    /**
+     * Get artists
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getArtists()
+    {
+        return $this->artists;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->name;
+    }
 }
