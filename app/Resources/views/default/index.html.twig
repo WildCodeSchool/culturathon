@@ -1,57 +1,47 @@
 {% extends "base.html.twig"%}
 
 {% block body %}
-    
+
         {% include 'include/navbar.html.twig' %}
 
-
-        {% block content %}
-                <div class="ct" id="t1">
-                        <div class="ct" id="t2">
-                                <div class="ct" id="t3">
-                                        <div class="ct" id="t4">
-                                                <div class="ct" id="t5">
-                                                        <div class="ct" id="t6">
-                                                                <section class="footer-distributed text-center sec">
-                                                                        <ul class="footer-right ulfoot">
-                                                                                <a href="#t0"><i class="icon fa fa-home" id="ziro"></i></a>
-                                                                                <a href="#t1"><i class="fa fa-facebook" id="uno"></i></a>
-                                                                                <a href="#t2"><i class="fa fa-twitter" id="dos"></i></a>
-                                                                                <a href="#t3"><i class="fa fa-instagram" id="tres"></i></a>
-                                                                                <a href="#t4"><i class="fa fa-volume-control-phone" id="cuatro"></i></a>
-                                                                                <a href="#t5"><i class="fa fa-envelope-open" id="canqo"></i></a>
-                                                                                <a href="#t6"><i class="fa fa-address-card" id="sixo"></i></a>
-                                                                        </ul>
-                                                                        <div class="page" id="p0">
-                                                                                <li class="icon "><span class="title">Home</span><span class="hint"><img class="rounded mx-auto d-block pt-4" src="https://www.louvre.fr/sites/default/files/imagecache/940x500/medias/medias_images/images/louvre-carrousel-eugene-delacroix-le-28-juillet-1830-la-liberte-guidant-le-peuple-detail.jpg?1519988083" alt=""></span></li>
-                                                                        </div>
-                                                                        <div class="page" id="p1">
-                                                                                <li class="icon "><span class="title">Facebook</span><span class="hint">Like this pen to see the magic!...<br/> Just kidding, it won't happen anything but I'll be really happy If you do so.</span></li>
-                                                                        </div>
-                                                                        <div class="page" id="p2">
-                                                                                <li class="icon "><span class="title">Twitter</span></li>
-                                                                        </div>
-                                                                        <div class="page" id="p3">
-                                                                                <li class="icon "><span class="title">Instagram</span></li>
-                                                                        </div>
-                                                                        <div class="page" id="p4">
-                                                                                <li class="icon "><span class="title">Contact</span><span class="hint"><a href="https://dribbble.com/rupok" target="_blank">Follow me on Dribbble</span></li>
-                                                                        </div>
-                                                                        <div class="page" id="p5">
-                                                                                <li class="icon "><span class="title">Message</span><span class="hint"><a href="https://dribbble.com/rupok" target="_blank">Follow me on Dribbble</span></li>
-                                                                        </div>
-                                                                        <div class="page" id="p6">
-                                                                                <li class="icon "><span class="title">Card</span><span class="hint"><a href="https://dribbble.com/rupok" target="_blank">Follow me on Dribbble</span></li>
-                                                                        </div>
-                                                                </section>
-                                                        </div>
+{% block content %}
+<div class="ct" id="t0">
+        <div class="ct" id="t1">
+                <div class="ct" id="t2">
+                        <div class="ct" id="t3">
+                                <div class="ct" id="t4">
+                                        <div class="ct" id="t5">
+                                                <div class="ct" id="t6">
+                                                        <section class="sec">
+                                                                <div class="page" id="p0">
+                                                                        <li class="icon "><span class="title">Culturathon</span><span class="hint"><img class="rounded mx-auto d-block pt-4"  alt=""></span></li>
+                                                                </div>
+                                                            <div class="page" id="p1">
+                                                                <li class="icon ">{% include 'include/facebook.html.twig' %}<span class="title">Facebook</span><span class="hint"><a href="" target=""></a></span></li>
+                                                            </div>
+                                                                <div class="page" id="p2">
+                                                                    <li class="icon twitter">{% include 'include/twitter.html.twig' %}<span class="title"></span><span class="hint"><a href="" target=""></a></span></li>
+                                                                </div>
+                                                                <div class="page" id="p3">
+                                                                        <li class="icon "><span class="title">Instagram</span><span class="hint"><a href="" target="">ana huna</a></span></li>
+                                                                </div>
+                                                                <div class="page" id="p4">
+                                                                        <li class="icon "><span class="title">Contact</span><span class="hint"><a href="" target=""></a></span></li>
+                                                                </div>
+                                                                <div class="page" id="p5">
+                                                                        <li class="icon "><span class="title">Message</span><span class="hint"><a href="" target=""></a></span></li>
+                                                                </div>
+                                                                <div class="page" id="p6">
+                                                                        <li class="icon "><span class="title">Card</span><span class="hint"><a href="" target=""></a></span></li>
+                                                                </div>
+                                                        </section>
                                                 </div>
                                         </div>
                                 </div>
                         </div>
                 </div>
-        {%  endblock %}
-
-
+        </div>
+</div>
+{%  endblock %}
         {% include 'include/footer.html.twig' %}
 {% endblock %}
