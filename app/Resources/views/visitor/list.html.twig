@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             {% for artwork in artworks %}
-                <div class="col-md-3 col-sm-6 pl-4 pb-5 mx-auto">
+                <div class="col-md-6 col-sm-6 pl-4 pb-5 mx-auto">
                     <figure class="card card-body mx-auto">
                         <img class="card-img-top" src="{{ artwork.image }}" alt="Card image cap">
                         <div class="card-body">
@@ -21,6 +21,7 @@
                         <button type="button" class="btn btn-primary" data-toggle="modal" href="#Modal{{ artwork.id }}">
                             Launch demo modal
                         </button>
+                    </figure>
 
                         <!-- Modal -->
                         <div class="modal fade" id="Modal{{ artwork.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -42,7 +43,6 @@
                                 </div>
                             </div>
                         </div>
-                    </figure>
                 </div>
             {% endfor %}
         </div>
