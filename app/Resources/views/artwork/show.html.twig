@@ -27,18 +27,14 @@
             </tbody>
         </table>
 
-        <ul>
-            <li>
-                <a href="{{ path('artwork_index') }}">Back to the list</a>
-            </li>
-            <li>
-                <a href="{{ path('artwork_edit', { 'id': artwork.id }) }}">Edit</a>
-            </li>
-            <li>
-                {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-                {{ form_end(delete_form) }}
-            </li>
-        </ul>
+        <div class="text-center">
+            <a href="{{ path('artwork_index') }}" class="btn btn-info">Back to the list</a>
+
+            <a href="{{ path('artwork_edit', { 'id': artwork.id }) }}" class="btn btn-info">Edit</a>
+
+            {{ form_start(delete_form) }}
+            <input type="submit"  class="btn btn-info mt-2" value="Delete">
+            {{ form_end(delete_form) }}
+        </div>
     </div>
 {% endblock %}
