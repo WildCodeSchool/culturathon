@@ -6,9 +6,11 @@
 
             <table class="table table-bordered">
                 <thead class="thead-dark">
-                <th scope="row">Id</th>
-                <th scope="row">Name</th>
-                <th scope="row">City</th>
+                <tr>
+                    <th scope="row">Id</th>
+                    <th scope="row">Name</th>
+                    <th scope="row">City</th>
+                </tr>
                 </thead>
                 <tbody>
                 <tr>
@@ -19,15 +21,10 @@
                 </tbody>
             </table>
             <div class="text-center">
-
-                <div class="btn btn-info">
-                    <a href="{{ path('museum_index') }}">Back to the list</a>
-                </div>
-                <div class="btn btn-info">
-                    <a href="{{ path('museum_edit', { 'id': museum.id }) }}">Edit</a>
-                </div>
+                <a href="{{ path('museum_index') }}" class="btn btn-info">Back to the list</a>
+                <a href="{{ path('museum_edit', { 'id': museum.id }) }}" class="btn btn-info">Edit</a>
                 {{ form_start(delete_form) }}
-                <input class="btn btn-info mt-2" type="submit" value="Delete">
+                <input class="btn btn-info mt-2" type="submit" value="Delete" class="btn btn-info">
                 {{ form_end(delete_form) }}
             </div>
         </div>

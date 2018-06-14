@@ -7,11 +7,17 @@
 
             {{ form_start(form) }}
             {{ form_widget(form) }}
-            <input type="submit" value="Create" class="btn btn-info"/>
-            {{ form_end(form) }}
-
-            <a href="{{ path('museum_index') }}" class="btn btn-info mt-2">Back to the list</a>
-
+            <div class="container">
+                <div class="row">
+                    <div class="d-flex">
+                        <input type="submit" value="Create" class="btn btn-info mr-2 mb-2"/>
+                        {{ form_end(form) }}
+                        <div class="d-flex">
+                            <a href="{{ path('museum_index') }}" class="btn btn-info mr-2 mb-2">Back to the list</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}
