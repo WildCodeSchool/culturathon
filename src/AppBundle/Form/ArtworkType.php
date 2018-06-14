@@ -5,6 +5,8 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+
 
 class ArtworkType extends AbstractType
 {
@@ -13,7 +15,12 @@ class ArtworkType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('date')->add('size')->add('technique')->add('description');
+        $builder
+            ->add('name', TextType::class, array('attr' => array('required' => true)))
+            ->add('date')
+            ->add('size', TextType::class, array('attr' => array('required' => true)))
+            ->add('technique', TextType::class, array('attr' => array('required' => true)))
+            ->add('description', TextType::class, array('attr' => array('required' => true)));
     }/**
      * {@inheritdoc}
      */
