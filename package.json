@@ -20,10 +20,10 @@
   },
   "homepage": "https://github.com/cyrildo/culturathon#readme",
   "dependencies": {
-    "@symfony/webpack-encore": "^0.20.1",
-    "bootstrap": "^4.1.1"
+    "@symfony/webpack-encore": "^0.20.1"
   },
   "devDependencies": {
+    "bootstrap": "^4.1.1",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.3",
     "webpack-notifier": "^1.6.0"
