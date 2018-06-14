@@ -43,11 +43,6 @@ class Artist
     private $nickName;
 
     /**
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Museum", mappedBy="artists")
-     */
-    private $museums;
-
-    /**
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Artwork", mappedBy="artists")
      */
     private $artworks;
@@ -143,39 +138,6 @@ class Artist
         $this->artworks = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
-    /**
-     * Add museum
-     *
-     * @param \AppBundle\Entity\Museum $museum
-     *
-     * @return Artist
-     */
-    public function addMuseum(\AppBundle\Entity\Museum $museum)
-    {
-        $this->museums[] = $museum;
-
-        return $this;
-    }
-
-    /**
-     * Remove museum
-     *
-     * @param \AppBundle\Entity\Museum $museum
-     */
-    public function removeMuseum(\AppBundle\Entity\Museum $museum)
-    {
-        $this->museums->removeElement($museum);
-    }
-
-    /**
-     * Get museums
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getMuseums()
-    {
-        return $this->museums;
-    }
 
     /**
      * Add artwork

@@ -67,6 +67,12 @@ class User extends BaseUser
      */
     private $role;
 
+    /**
+     * @var
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ArtworkUserEmotion", mappedBy="user")
+     */
+    private $aues;
+
 
     /**
      * Get id
@@ -172,5 +178,39 @@ class User extends BaseUser
     public function getRole()
     {
         return $this->role;
+    }
+
+    /**
+     * Add aue
+     *
+     * @param \AppBundle\Entity\ArtworkUserEmotion $aue
+     *
+     * @return User
+     */
+    public function addAue(\AppBundle\Entity\ArtworkUserEmotion $aue)
+    {
+        $this->aues[] = $aue;
+
+        return $this;
+    }
+
+    /**
+     * Remove aue
+     *
+     * @param \AppBundle\Entity\ArtworkUserEmotion $aue
+     */
+    public function removeAue(\AppBundle\Entity\ArtworkUserEmotion $aue)
+    {
+        $this->aues->removeElement($aue);
+    }
+
+    /**
+     * Get aues
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAues()
+    {
+        return $this->aues;
     }
 }

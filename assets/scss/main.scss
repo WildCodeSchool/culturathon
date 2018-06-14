@@ -32,14 +32,14 @@ body {
         left: 0;
         bottom: 0;
         animation: menu-anim 1.5s 1 ease-out normal;
-        width: 14%;
+        width: 11em;
         transition: all 0.5s ease;
 
         &.reverse-anim {
           left: 0;
           bottom: 0;
           animation: menu-anim 1.5s 1 ease-out reverse;
-          width: 14%;
+          width: 11em;
           transition: all 0.5s ease;
         }
       }
@@ -50,8 +50,7 @@ body {
         margin-top: 8em;
         padding-left: 10%;
         margin-left: -10px;
-        font-size: 1.2em;
-        font-weight: 800;
+        font-size: calc(18px + 6 * (100vw - 400px) / 1200);
 
         li {
           margin: 10px 0;
@@ -123,7 +122,7 @@ body {
       100% {
         bottom: 0;
         left: 0;
-        width: 14%;
+        width: 11em;
       }
     }
   }
@@ -134,7 +133,7 @@ body {
   left: 0;
   display: block;
   cursor: pointer;
-  width: 60px;
+  width: 40px;
   height: 40px;
   background-color: $red;
   border-bottom-right-radius: 100%;
@@ -208,38 +207,12 @@ body {
   font: normal 16px sans-serif;
   position: fixed;
   bottom: 0px;
-  height: 10%;
+  height: 9vh;
+  color: $whitey;
 
 }
-
-.footer-distributed .footer-left p{
-  color:  #8f9296;
-  font-size: 14px;
-  margin: 0;
-}
-
-/* Footer links */
-
-.footer-distributed p.footer-links{
-  font-size:18px;
-  font-weight: bold;
-  color:  #ffffff;
-  margin: 1em ;
-  padding: 0;
-}
-
-.footer-distributed p.footer-links a{
-  display:inline-block;
-  line-height: 1.8;
-  text-decoration: none;
-  color:  inherit;
-}
-
 .footer-distributed .footer-right{
-  float: right;
   margin-top: 6px;
-  max-width: 200px;
-  padding: 1em;
 }
 
 .footer-distributed .footer-right a{
@@ -248,34 +221,27 @@ body {
   height: 35px;
   background-color:  #33383b;
   border-radius: 2px;
-
   font-size: 20px;
   color: #ffffff;
   text-align: center;
   line-height: 35px;
-
   margin-left: 3px;
 }
+.mention {
 
+  cursor: pointer;
+}
 /* If you don't want the footer to be responsive, remove these media queries */
 
 @media (max-width: 600px) {
-
-  .footer-distributed .footer-left,
-  .footer-distributed .footer-right{
-    text-align: center;
+  .footer-distributed {
+    height: 7vh;
   }
-
   .footer-distributed .footer-right{
     float: none;
     margin: 0 auto 20px;
   }
-
-  .footer-distributed .footer-left p.footer-links{
-    line-height: 1.8;
-  }
 }
 
-
-
+//---footer new---//
 

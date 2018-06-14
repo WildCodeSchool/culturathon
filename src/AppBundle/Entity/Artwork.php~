@@ -67,6 +67,12 @@ class Artwork
     private $artists;
 
     /**
+     * @var
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ArtworkUserEmotion", mappedBy="artwork")
+     */
+    private $aues;
+
+    /**
      * Get id
      *
      * @return int
@@ -218,5 +224,88 @@ class Artwork
     public function getMuseum()
     {
         return $this->museum;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->artists = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Add artist
+     *
+     * @param \AppBundle\Entity\Artist $artist
+     *
+     * @return Artwork
+     */
+    public function addArtist(\AppBundle\Entity\Artist $artist)
+    {
+        $this->artists[] = $artist;
+
+        return $this;
+    }
+
+    /**
+     * Remove artist
+     *
+     * @param \AppBundle\Entity\Artist $artist
+     */
+    public function removeArtist(\AppBundle\Entity\Artist $artist)
+    {
+        $this->artists->removeElement($artist);
+    }
+
+    /**
+     * Get artists
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getArtists()
+    {
+        return $this->artists;
+    }
+
+    /**
+     * Add aue
+     *
+     * @param \AppBundle\Entity\ArtworkUserEmotion $aue
+     *
+     * @return Artwork
+     */
+    public function addAue(\AppBundle\Entity\ArtworkUserEmotion $aue)
+    {
+        $this->aues[] = $aue;
+
+        return $this;
+    }
+
+    /**
+     * Remove aue
+     *
+     * @param \AppBundle\Entity\ArtworkUserEmotion $aue
+     */
+    public function removeAue(\AppBundle\Entity\ArtworkUserEmotion $aue)
+    {
+        $this->aues->removeElement($aue);
+    }
+
+    /**
+     * Get aues
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAues()
+    {
+        return $this->aues;
     }
 }

@@ -41,11 +41,6 @@ class Museum
     private $artworks;
 
     /**
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Artist", inversedBy="artworks")
-     */
-    private $artists;
-
-    /**
      * Get id
      *
      * @return int
@@ -142,5 +137,13 @@ class Museum
     public function getArtworks()
     {
         return $this->artworks;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->name;
     }
 }
