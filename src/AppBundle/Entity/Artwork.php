@@ -57,6 +57,29 @@ class Artwork
     private $description;
 
     /**
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param string $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string")
+     */
+    private $image;
+
+    /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Museum", inversedBy="artworks")
      */
     private $museum;

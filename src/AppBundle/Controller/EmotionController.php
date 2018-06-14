@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Emotion controller.
  *
- * @Route("emotion")
+ * @Route("admin/emotion")
  */
 class EmotionController extends Controller
 {

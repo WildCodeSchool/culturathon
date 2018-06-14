@@ -7,7 +7,7 @@
             {% for artwork in artworks %}
                 <div class="col-md-3 col-sm-6 pl-4 pb-5 mx-auto">
                     <figure class="card card-body mx-auto">
-                        <img class="card-img-top" src="http://via.placeholder.com/150x200" alt="Card image cap">
+                        <img class="card-img-top" src="{{ artwork.image }}" alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">{{ artwork.name }}</h4>
                             <p class="card-text">{{ artwork.description }}</p>
@@ -16,6 +16,31 @@
                             <p>{% if artwork.date %}{{ artwork.date|date('d-m-Y') }}{% endif %}</p>
                             <p>{{ artwork.size }}</p>
                             <p>{{ artwork.technique }}</p>
+                        </div>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" href="#Modal{{ artwork.id }}">
+                            Launch demo modal
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="Modal{{ artwork.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img class="card-img-top" src="{{ artwork.image }}" alt="Card image cap">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </figure>
                 </div>
