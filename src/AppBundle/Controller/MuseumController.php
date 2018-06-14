@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Museum controller.
  *
- * @Route("museum")
+ * @Route("admin/museum")
  */
 class MuseumController extends Controller
 {
