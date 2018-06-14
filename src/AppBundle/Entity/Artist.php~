@@ -43,11 +43,6 @@ class Artist
     private $nickName;
 
     /**
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Museum", mappedBy="artists")
-     */
-    private $museums;
-
-    /**
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Artwork", mappedBy="artists")
      */
     private $artworks;
@@ -133,5 +128,56 @@ class Artist
     public function getNickName()
     {
         return $this->nickName;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->museums = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->artworks = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+
+    /**
+     * Add artwork
+     *
+     * @param \AppBundle\Entity\Artwork $artwork
+     *
+     * @return Artist
+     */
+    public function addArtwork(\AppBundle\Entity\Artwork $artwork)
+    {
+        $this->artworks[] = $artwork;
+
+        return $this;
+    }
+
+    /**
+     * Remove artwork
+     *
+     * @param \AppBundle\Entity\Artwork $artwork
+     */
+    public function removeArtwork(\AppBundle\Entity\Artwork $artwork)
+    {
+        $this->artworks->removeElement($artwork);
+    }
+
+    /**
+     * Get artworks
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getArtworks()
+    {
+        return $this->artworks;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->firstName . ' ' . $this->lastName;
     }
 }

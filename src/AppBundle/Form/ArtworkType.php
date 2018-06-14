@@ -24,7 +24,8 @@ class ArtworkType extends AbstractType
             ->add('size', TextType::class, array('attr' => array('required' => true)))
             ->add('technique', TextType::class, array('attr' => array('required' => true)))
             ->add('description', TextType::class, array('attr' => array('required' => true)))
-            ->add('artists');          
+            ->add('image')
+            ->add('artists');
     }
     
     /**

@@ -1,40 +1,37 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="container">
-    <h1 class="text-center">Artist</h1>
+    <div class="container">
+        <h1 class="text-center">Artist</h1>
 
-    <table class="table table-bordered">
-        <thead class="thead-dark">
-        <tr>
-            <th scope="row">Id</th>
-            <th scope="row">Firstname</th>
-            <th scope="row">Lastname</th>
-            <th scope="row">Nickname</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td >{{ artist.id }}</td>
-            <td>{{ artist.firstName }}</td>
-            <td>{{ artist.lastName }}</td>
-            <td>{{ artist.nickName }}</td>
-        </tr>
-        </tbody>
-    </table>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="row">Id</th>
+                <th scope="row">Firstname</th>
+                <th scope="row">Lastname</th>
+                <th scope="row">Nickname</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ artist.id }}</td>
+                <td>{{ artist.firstName }}</td>
+                <td>{{ artist.lastName }}</td>
+                <td>{{ artist.nickName }}</td>
+            </tr>
+            </tbody>
+        </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('artist_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('artist_edit', { 'id': artist.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
-</div>
+        <div class="text-center">
+            <a href="{{ path('artist_index') }}" class="btn btn-info">Back to the list</a>
+
+            <a href="{{ path('artist_edit', { 'id': artist.id }) }}" class="btn btn-info">Edit</a>
+            <div class="mt-2">
+                {{ form_start(delete_form) }}
+                <input type="submit" value="Delete" class="btn btn-info">
+                {{ form_end(delete_form) }}
+            </div>
+        </div>
+    </div>
 {% endblock %}

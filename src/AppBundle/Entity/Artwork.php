@@ -57,6 +57,29 @@ class Artwork
     private $description;
 
     /**
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param string $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string")
+     */
+    private $image;
+
+    /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Museum", inversedBy="artworks")
      */
     private $museum;
@@ -65,6 +88,12 @@ class Artwork
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Artist", inversedBy="artworks")
      */
     private $artists;
+
+    /**
+     * @var
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ArtworkUserEmotion", mappedBy="artwork")
+     */
+    private $aues;
 
     /**
      * Get id
@@ -267,5 +296,39 @@ class Artwork
     public function getArtists()
     {
         return $this->artists;
+    }
+
+    /**
+     * Add aue
+     *
+     * @param \AppBundle\Entity\ArtworkUserEmotion $aue
+     *
+     * @return Artwork
+     */
+    public function addAue(\AppBundle\Entity\ArtworkUserEmotion $aue)
+    {
+        $this->aues[] = $aue;
+
+        return $this;
+    }
+
+    /**
+     * Remove aue
+     *
+     * @param \AppBundle\Entity\ArtworkUserEmotion $aue
+     */
+    public function removeAue(\AppBundle\Entity\ArtworkUserEmotion $aue)
+    {
+        $this->aues->removeElement($aue);
+    }
+
+    /**
+     * Get aues
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAues()
+    {
+        return $this->aues;
     }
 }
