@@ -21,18 +21,20 @@ class MuseumFixtures extends Fixture
         $museum->setCity('Londres');
         $manager->persist($museum);
 
-        $museum = new Museum();
-        $museum->setName('Le Louvre');
-        $museum->setCity('Paris');
-        $manager->persist($museum);
+        $museum1 = new Museum();
+        $museum1->setName('Le Louvre');
+        $museum1->setCity('Paris');
+        $manager->persist($museum1);
 
-        $museum = new Museum();
-        $museum->setName('LabO Musée');
-        $museum->setCity('Orléans');
-        $manager->persist($museum);
+        $museum2 = new Museum();
+        $museum2->setName('LabO Musée');
+        $museum2->setCity('Orléans');
+        $manager->persist($museum2);
 
         $manager->flush();
 
         $this->addReference('museum', $museum);
+        $this->addReference('museum1', $museum1);
+        $this->addReference('museum2', $museum2);
     }
 }

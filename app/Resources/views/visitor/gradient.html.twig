@@ -1,0 +1,14 @@
+{% include 'default/index.html.twig' %}
+
+{% block body %}
+    <body class="artwork">
+    <div class="container">
+        <div class="row text-light">
+            {% for artworkUserEmotion in artworkUserEmotions %}
+                {{ artworkUserEmotion.emotion.id }}
+            {% endfor %}
+        </div>
+    </div>
+    </body>
+{% endblock %}
+
