@@ -1,19 +1,20 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Users list</h1>
+<div class="container">
+    <h1 class="text-center">Users list</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Role</th>
-                <th>Actions</th>
-            </tr>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="row">Id</th>
+            <th scope="row">Firstname</th>
+            <th scope="row">Lastname</th>
+            <th scope="row">Email</th>
+            <th scope="row">Phone</th>
+            <th scope="row">Role</th>
+            <th scope="row">Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for user in users %}
@@ -25,18 +26,13 @@
                 <td>{{ user.phone }}</td>
                 <td>{{ user.role }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('user_show', { 'id': user.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('user_edit', { 'id': user.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('user_show', { 'id': user.id }) }}" class="btn btn-info">show</a>
+                    <a href="{{ path('user_edit', { 'id': user.id }) }}" class="btn btn-info mt-2">edit</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
+</div>
 
 {% endblock %}

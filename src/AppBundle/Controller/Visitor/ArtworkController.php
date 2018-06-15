@@ -9,6 +9,7 @@
 namespace AppBundle\Controller\Visitor;
 
 use AppBundle\Entity\Artwork;
+use AppBundle\Entity\Emotion;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -31,9 +32,11 @@ class ArtworkController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $artworks = $em->getRepository('AppBundle:Artwork')->findAll();
+        $emotions = $em->getRepository('AppBundle:Emotion')->findAll();
 
         return $this->render('visitor/list.html.twig', array(
             'artworks' => $artworks,
+            'emotions' => $emotions,
         ));
     }
 }

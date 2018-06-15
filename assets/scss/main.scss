@@ -11,6 +11,7 @@ body {
   position: relative;
   font-family: 'Open Sans', sans-serif;
 
+}
   .wrapper {
     width: 100%;
     height: 100vh;
@@ -127,7 +128,7 @@ body {
         width: 11em;
       }
     }
-  }
+
 .menu_toggle {
   z-index: 901;
   position: fixed;
@@ -200,6 +201,7 @@ body {
     }
   }
 }
+
 .footer-distributed{
   z-index: 905;
   background-color: #292c2f;
@@ -239,13 +241,20 @@ body {
   .footer-distributed {
     height: 7vh;
   }
-  .footer-distributed .footer-right{
+
+  .footer-right {
     float: none;
     margin: 0 auto 20px;
   }
 }
 
-//---footer new---//
+.artwork {
+  background-image: url("/images/hin-bong.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
 
 * {
   transition: all 500ms ease-out;
@@ -518,4 +527,7 @@ iframe {
 .message{
   font-size: calc(18px + 6 * (100vw - 400px) / 1200);
   float: left;
+}
+.card{
+  width: 350px;
 }

@@ -1,47 +1,37 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="container">
-    <h1 class="text-center">Artists list</h1>
+    <div class="container">
+        <h1 class="text-center">Artists list</h1>
 
-    <table class="table table-bordered">
-        <thead class="thead-dark">
-        <tr>
-            <th scope="row">Id</th>
-            <th scope="row">Firstname</th>
-            <th scope="row">Lastname</th>
-            <th scope="row">Nickname</th>
-            <th scope="row">Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for artist in artists %}
+        <table class="table table-bordered">
+            <thead class="thead-dark">
             <tr>
-                <td><a href="{{ path('artist_show', { 'id': artist.id }) }}">{{ artist.id }}</a></td>
-                <td>{{ artist.firstName }}</td>
-                <td>{{ artist.lastName }}</td>
-                <td>{{ artist.nickName }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('artist_show', { 'id': artist.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('artist_edit', { 'id': artist.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
+                <th scope="row">Id</th>
+                <th scope="row">Firstname</th>
+                <th scope="row">Lastname</th>
+                <th scope="row">Nickname</th>
+                <th scope="row">Actions</th>
             </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for artist in artists %}
+                <tr>
+                    <td><a href="{{ path('artist_show', { 'id': artist.id }) }}">{{ artist.id }}</a></td>
+                    <td>{{ artist.firstName }}</td>
+                    <td>{{ artist.lastName }}</td>
+                    <td>{{ artist.nickName }}</td>
+                    <td>
+                        <a href="{{ path('artist_show', { 'id': artist.id }) }}" class="btn btn-info">show</a>
+                        <a href="{{ path('artist_edit', { 'id': artist.id }) }}" class="btn btn-info">edit</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="text-center">
+            <a href="{{ path('artist_new') }}" class="btn btn-info">Create a new artist</a>
+        </div>
+    </div>
 
-
-    <ul>
-        <li>
-            <a href="{{ path('artist_new') }}">Create a new artist</a>
-        </li>
-    </ul>
-</div>
-
-    {% endblock %}
+{% endblock %}

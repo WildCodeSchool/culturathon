@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-center">Emotion</h1>
+
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="row">Id</th>
+                <th scope="row">Name</th>
+                <th scope="row">Color</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ emotion.id }}</td>
+                <td>{{ emotion.name }}</td>
+                <td>{{ emotion.color }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="text-center">
+            <a href="{{ path('emotion_index') }}" class="btn btn-info">Back to the list</a>
+
+            <a href="{{ path('emotion_edit', { 'id': emotion.id }) }}" class="btn btn-info">Edit</a>
+
+            {{ form_start(delete_form) }}
+            <input type="submit" value="Delete" class="btn btn-info mt-2">
+            {{ form_end(delete_form) }}
+        </div>
+    </div>
+
+{% endblock %}
