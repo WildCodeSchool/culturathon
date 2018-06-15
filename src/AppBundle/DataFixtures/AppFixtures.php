@@ -21,28 +21,32 @@ class AppFixtures extends Fixture
         $emotion->setColor('yellow');
         $manager->persist($emotion);
 
-        $emotion = new Emotion();
-        $emotion->setName('tristesse');
-        $emotion->setColor('bleu');
-        $manager->persist($emotion);
+        $emotion1 = new Emotion();
+        $emotion1->setName('tristesse');
+        $emotion1->setColor('bleu');
+        $manager->persist($emotion1);
 
-        $emotion = new Emotion();
-        $emotion->setName('colère');
-        $emotion->setColor('rouge');
-        $manager->persist($emotion);
+        $emotion2 = new Emotion();
+        $emotion2->setName('colère');
+        $emotion2->setColor('rouge');
+        $manager->persist($emotion2);
 
-        $emotion = new Emotion();
-        $emotion->setName('espoir');
-        $emotion->setColor('vert');
-        $manager->persist($emotion);
+        $emotion3 = new Emotion();
+        $emotion3->setName('espoir');
+        $emotion3->setColor('vert');
+        $manager->persist($emotion3);
 
-        $emotion = new Emotion();
-        $emotion->setName('mystère');
-        $emotion->setColor('violet');
-        $manager->persist($emotion);
+        $emotion4 = new Emotion();
+        $emotion4->setName('mystère');
+        $emotion4->setColor('violet');
+        $manager->persist($emotion4);
 
         $manager->flush();
 
         $this->addReference('emotion', $emotion);
+        $this->addReference('emotion1', $emotion1);
+        $this->addReference('emotion2', $emotion2);
+        $this->addReference('emotion3', $emotion3);
+        $this->addReference('emotion4', $emotion4);
     }
 }
