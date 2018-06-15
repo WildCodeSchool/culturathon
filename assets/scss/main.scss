@@ -10,6 +10,7 @@ body {
   position: relative;
   font-family: 'Open Sans', sans-serif;
 
+}
   .wrapper {
     width: 100%;
     height: 100vh;
@@ -125,7 +126,7 @@ body {
         width: 11em;
       }
     }
-  }
+
 .menu_toggle {
   z-index: 900;
   position: fixed;
@@ -198,6 +199,7 @@ body {
     }
   }
 }
+
 .footer-distributed{
   background-color: #292c2f;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
@@ -247,6 +249,11 @@ body {
 .artwork {
   background-image: url("/images/hin-bong.jpg");
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
+.card{
+  width: 350px;
+}
