@@ -1,41 +1,37 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Emotions list</h1>
+    <div class="container">
+        <h1 class="text-center">Emotions list</h1>
 
-    <table>
-        <thead>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Color</th>
-                <th>Actions</th>
+                <th scope="row">Id</th>
+                <th scope="row">Name</th>
+                <th scope="row">Color</th>
+                <th scope="row">Actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for emotion in emotions %}
-            <tr>
-                <td><a href="{{ path('emotion_show', { 'id': emotion.id }) }}">{{ emotion.id }}</a></td>
-                <td>{{ emotion.name }}</td>
-                <td>{{ emotion.color }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('emotion_show', { 'id': emotion.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('emotion_edit', { 'id': emotion.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for emotion in emotions %}
+                <tr>
+                    <td><a href="{{ path('emotion_show', { 'id': emotion.id }) }}">{{ emotion.id }}</a></td>
+                    <td>{{ emotion.name }}</td>
+                    <td>{{ emotion.color }}</td>
+                    <td>
 
-    <ul>
-        <li>
-            <a href="{{ path('emotion_new') }}">Create a new emotion</a>
-        </li>
-    </ul>
+                        <a href="{{ path('emotion_show', { 'id': emotion.id }) }}" class="btn btn-info">show</a>
+
+                        <a href="{{ path('emotion_edit', { 'id': emotion.id }) }}" class="btn btn-info">edit</a>
+
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="text-center">
+            <a href="{{ path('emotion_new') }}" class="btn btn-info">Create a new emotion</a>
+        </div>
+    </div>
 {% endblock %}

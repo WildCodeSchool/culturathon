@@ -6,6 +6,14 @@
             <h1 class="text-center">Artwork creation</h1>
 
             {{ form_start(form) }}
+            {{ form_row(form.name) }}
+            {{ form_row(form.date) }}
+            {{ form_row(form.size) }}
+            {{ form_row(form.technique) }}
+            {{ form_row(form.image) }}
+            {{ form_row(form.artists) }}
+            {{ form_row(form.museum) }}
+            {{ form_row(form.description) }}
             {{ form_widget(form) }}
             <div class="container">
                 <div class="row">
