@@ -1,37 +1,35 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Artworkuseremotions list</h1>
+<div class="container">
+    <h1 class="text-center">Artworkuseremotions list</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Actions</th>
-            </tr>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th>Id</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for artworkUserEmotion in artworkUserEmotions %}
             <tr>
-                <td><a href="{{ path('artworkuseremotion_show', { 'id': artworkUserEmotion.id }) }}">{{ artworkUserEmotion.id }}</a></td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('artworkuseremotion_show', { 'id': artworkUserEmotion.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('artworkuseremotion_edit', { 'id': artworkUserEmotion.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('artworkuseremotion_show', { 'id': artworkUserEmotion.id }) }}">{{ artworkUserEmotion.id }}</a>
+                </td>
+                <td>
+
+                    <a href="{{ path('artworkuseremotion_show', { 'id': artworkUserEmotion.id }) }}">show</a>
+
+                    <a href="{{ path('artworkuseremotion_edit', { 'id': artworkUserEmotion.id }) }}">edit</a>
+
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('artworkuseremotion_new') }}">Create a new artworkUserEmotion</a>
-        </li>
-    </ul>
-{% endblock %}
+
+            <a href="{{ path('artworkuseremotion_new') }}" class="btn btn-info">Create a new artworkUserEmotion</a>
+</div>
+    {% endblock %}

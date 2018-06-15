@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {% trans_default_domain 'FOSUserBundle' %}
+    <div class="row my-5">
+        <div class="offset-3 col-md-6 mx-auto shadow">
+            <h1 class="text-center">Se connecter</h1>
+            <form action="{{ path("fos_user_security_check") }}" method="post">
+                {% if csrf_token %}
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
+                {% endif %}
+                <div class="form-group text-center">
+                    <label class="d-block" for="username">{{ 'Nom d\'utilisateur : '|trans }}</label>
+                    <input type="text" id="username" name="_username" value="{{ last_username }}"
+                           required="required" autocomplete="username"/>
+                </div>
+
+                <div class="form-group text-center">
+                    <label class="d-block" for="password">{{ 'Mot de passe :'|trans }}</label>
+                    <input type="password" id="password" name="_password" required="required"
+                           autocomplete="current-password"/>
+                </div>
+
+                <div class="form-group text-center mb-2">
+                    <input type="checkbox" id="remember_me" name="_remember_me" value="on"/>
+                    <label class="form-check-label" for="remember_me">{{ 'Se souvenir de moi'|trans }}</label>
+                </div>
+
+                <div class="form-group text-center">
+                    <input type="submit" class="btn btn-primary" id="_submit" name="_submit"
+                           value="{{ 'Connexion'|trans }}"/>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock body %}

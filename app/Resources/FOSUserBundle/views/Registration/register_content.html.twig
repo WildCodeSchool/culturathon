@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    {% trans_default_domain 'FOSUserBundle' %}
+
+    <div class="row my-5">
+        <div class="offset-3 col-md-6 mx-auto shadow">
+            <h1 class="text-center mt-3">Création de votre compte</h1>
+            {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+            <div class="form-group">
+                {{ form_row(form.email, {'label': 'Adresse e-mail :'}) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.username, {'label': 'Nom d\'utilisateur :'}) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.plainPassword.first, {'label': 'Mot de passe :'}) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.plainPassword.second, {'label': 'Confirmation mot de passe :'}) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.lastName, {'label': 'Nom :'}) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.firstName, {'label': 'Prénom :'}) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.phone, {'label': 'Telephone :'}) }}
+            </div>
+            <div class="form-group">
+                {{ form_row(form.role, {'label': 'Role :'}) }}
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary mx-auto">Enregistrer</button>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+
+{% endblock body %}

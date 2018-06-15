@@ -1,21 +1,28 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Artworkuseremotion edit</h1>
+    <div class="row my-5">
+        <div class="offset-3 col-md-6 mx-auto shadow">
+            <h1 class="text-center">Artworkuseremotion edit</h1>
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+            {{ form_start(edit_form) }}
+            {{ form_widget(edit_form) }}
+            <div class="container">
+                <div class="row">
+                    <div class="d-flex">
+                        <input type="submit" value="Edit" class="btn btn-info mr-2 mb-2"/>
+                        {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('artworkuseremotion_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+                        <div class="d-flex">
+                            <a href="{{ path('artworkuseremotion_index') }}" class="btn btn-info mr-2 mb-2">Back to the list</a>
+
+                            {{ form_start(delete_form) }}
+                            <input type="submit" value="Delete" class="btn btn-info mr-2 mb-2">
+                            {{ form_end(delete_form) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
