@@ -17,7 +17,7 @@ class ArtworkUserEmotionFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        $artworkUserEmotion = new ArtworkUserEmotion();
+       /* $artworkUserEmotion = new ArtworkUserEmotion();
         $artworkUserEmotion->setEmotion();
         $artworkUserEmotion->setArtwork(EntityType::class);
         $artworkUserEmotion->setUser(EntityType::class);
@@ -27,5 +27,6 @@ class ArtworkUserEmotionFixtures extends Fixture
         $manager->flush();
 
         $this->addReference('artworkUserEmotion', $artworkUserEmotion);
+       */
     }
 }

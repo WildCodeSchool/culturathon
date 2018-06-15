@@ -17,6 +17,7 @@ class UserFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
+        /*
         $user = new User();
         $user->setFirstName('French Art Studio');
         $user->setLastName('French Art Studio');
@@ -28,6 +29,6 @@ class UserFixtures extends Fixture
         $manager->persist($user);
 
         $manager->flush();
-
+        */
     }
 }

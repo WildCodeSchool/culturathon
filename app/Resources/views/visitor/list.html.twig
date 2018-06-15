@@ -22,11 +22,6 @@
 
                             En savoir plus
                         </button>
-                        {% for emotion in emotions %}
-                            <a class="btn btn-outline-primary" href="{{ path('note', {'emotion': emotion.id , 'artwork': artwork.id}) }}">
-                                {{ emotion.name }}
-                            </a>
-                        {% endfor %}
                     </figure>
 
                         <!-- Modal -->
@@ -46,6 +41,11 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Fermer</button>
                                         <button href="#" type="button" class="btn btn-outline-primary">Vous aimez cette oeuvre ?</button>
+                                        {% for emotion in emotions %}
+                                            <a class="btn btn-outline-primary" href="{{ path('note', {'emotion': emotion.id , 'artwork': artwork.id}) }}">
+                                                {{ emotion.name }}
+                                            </a>
+                                        {% endfor %}
 
                                     </div>
                                 </div>
