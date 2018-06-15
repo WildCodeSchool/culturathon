@@ -14,7 +14,8 @@ use AppBundle\Entity\Emotion;
 use AppBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class NoteController
@@ -31,11 +32,24 @@ class NoteController extends Controller
     public function createGradient(Artwork $artwork)
     {
         $em = $this->getDoctrine()->getManager();
-        $artworkUserEmotions = $em->getRepository('AppBundle:ArtworkUserEmotion')->findBy(['artwork'=>$artwork]);
+        $artworkUserEmotions = $em->getRepository('AppBundle:ArtworkUserEmotion')->findBy(['artwork' => $artwork]);
+        foreach ($artworkUserEmotions as $emotion) {
+            $emotions[] = $emotion->getEmotion();
+        }
+        $total = sizeof($emotions);
 
+        foreach ($emotions as $color){
+            $colors[] = $color->getColor();
+        }
+        $nbcolor = array_count_values($colors);
+
+        foreach ($nbcolor as $key => $value) {
+            $percents[]=($nbcolor[$key]/$total)*100;
+        }
 
         return $this->render('visitor/gradient.html.twig', array(
             'artworkUserEmotions' => $artworkUserEmotions,
+            'percents'=> $percents,
         ));
 
     }
@@ -57,7 +71,7 @@ class NoteController extends Controller
         $em->persist($artworkUserEmotion);
         $em->flush();
 
-        return $this->redirectToRoute('gradient', ['id'=>$artwork->getId()]);
+        return $this->redirectToRoute('gradient', ['id' => $artwork->getId()]);
 
     }
 
