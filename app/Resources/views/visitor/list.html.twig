@@ -17,9 +17,16 @@
                             <p>{{ artwork.technique }}</p>
                         </div>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" href="#Modal{{ artwork.id }}">
+
+                        <button type="button" class="btn btn-outline-primary" data-toggle="modal" href="#Modal{{ artwork.id }}">
+
                             En savoir plus
                         </button>
+                        {% for emotion in emotions %}
+                            <a class="btn btn-outline-primary" href="{{ path('note', {'emotion': emotion.id , 'artwork': artwork.id}) }}">
+                                {{ emotion.name }}
+                            </a>
+                        {% endfor %}
                     </figure>
 
                         <!-- Modal -->
@@ -37,7 +44,9 @@
                                         <p class="card-text">{{ artwork.description }}</p>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Fermer</button>
+                                        <button href="#" type="button" class="btn btn-outline-primary">Vous aimez cette oeuvre ?</button>
+
                                     </div>
                                 </div>
                             </div>
