@@ -510,3 +510,11 @@ a {
   height: 80vh;
   text-align: center;
 }
+iframe {
+
+  height: 45vh;
+}
+.message{
+  font-size: calc(18px + 6 * (100vw - 400px) / 1200);
+  float: left;
+}
