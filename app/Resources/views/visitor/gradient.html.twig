@@ -3,9 +3,9 @@
 {% block body %}
     <body class="artwork">
     <div class="container">
-        <div class="row">
+        <div class="row text-light">
             {% for artworkUserEmotion in artworkUserEmotions %}
-                {{ artworkUserEmotion.emotion.color }}
+                {{ artworkUserEmotion.emotion.id }}
             {% endfor %}
         </div>
     </div>

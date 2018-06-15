@@ -33,6 +33,7 @@ class NoteController extends Controller
         $em = $this->getDoctrine()->getManager();
         $artworkUserEmotions = $em->getRepository('AppBundle:ArtworkUserEmotion')->findBy(['artwork'=>$artwork]);
 
+
         return $this->render('visitor/gradient.html.twig', array(
             'artworkUserEmotions' => $artworkUserEmotions,
         ));

@@ -5,12 +5,12 @@
     <div class="container">
         <div class="row">
             {% for artwork in artworks %}
-                <div class="col-md-6 col-sm-6 pl-4 pb-5 mx-auto">
-                    <figure class="card card-body mx-auto">
-                        <img class="card-img-top" src="{{ artwork.image }}" alt="Card image cap">
+
+                <div class="col-md-3 col-sm-6 pl-4 pb-5 mx-auto">
+                    <figure class="card card-body mx-auto mt-4">
+                        <img class=" card img-fluid card-img-top" src="{{ artwork.image }}" alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">{{ artwork.name }}</h4>
-                            <p class="card-text">{{ artwork.description }}</p>
                         </div>
                         <div class="card-footer">
                             <p>{% if artwork.date %}{{ artwork.date|date('d-m-Y') }}{% endif %}</p>
@@ -18,7 +18,9 @@
                             <p>{{ artwork.technique }}</p>
                         </div>
                         <!-- Button trigger modal -->
+
                         <button type="button" class="btn btn-outline-primary" data-toggle="modal" href="#Modal{{ artwork.id }}">
+
                             En savoir plus
                         </button>
                         {% for emotion in emotions %}
@@ -33,17 +35,19 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">{{ artwork.name }}</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
                                         <img class="card-img-top" src="{{ artwork.image }}" alt="Card image cap">
+                                        <p class="card-text">{{ artwork.description }}</p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Fermer</button>
                                         <button href="#" type="button" class="btn btn-outline-primary">Vous aimez cette oeuvre ?</button>
+
                                     </div>
                                 </div>
                             </div>
