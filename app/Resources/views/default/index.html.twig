@@ -1,47 +1,58 @@
-{% extends "base.html.twig"%}
+{% extends "base.html.twig" %}
 
 {% block body %}
 
-        {% include 'include/navbar.html.twig' %}
+    {% include 'include/navbar.html.twig' %}
 
-{% block content %}
-<div class="ct" id="t0">
-        <div class="ct" id="t1">
+    {% block content %}
+        <div class="ct" id="t0">
+            <div class="ct" id="t1">
                 <div class="ct" id="t2">
-                        <div class="ct" id="t3">
-                                <div class="ct" id="t4">
-                                        <div class="ct" id="t5">
-                                                <div class="ct" id="t6">
-                                                        <section class="sec">
-                                                                <div class="page" id="p0">
-                                                                        <li class="icon "><span class="title">Culturathon</span><span class="hint"><img class="rounded mx-auto d-block pt-4"  alt=""></span></li>
-                                                                </div>
-                                                            <div class="page" id="p1">
-                                                                <li class="icon ">{% include 'include/facebook.html.twig' %}<span class="title">Facebook</span><span class="hint"><a href="" target=""></a></span></li>
-                                                            </div>
-                                                                <div class="page" id="p2">
-                                                                    <li class="icon twitter">{% include 'include/twitter.html.twig' %}<span class="title"></span><span class="hint"><a href="" target=""></a></span></li>
-                                                                </div>
-                                                                <div class="page" id="p3">
-                                                                        <li class="icon "><span class="title">Instagram</span><span class="hint"><a href="" target="">ana huna</a></span></li>
-                                                                </div>
-                                                                <div class="page" id="p4">
-                                                                        <li class="icon "><span class="title">Contact</span><span class="hint"><a href="" target=""></a></span></li>
-                                                                </div>
-                                                                <div class="page" id="p5">
-                                                                        <li class="icon "><span class="title">Message</span><span class="hint"><a href="" target=""></a></span></li>
-                                                                </div>
-                                                                <div class="page" id="p6">
-                                                                        <li class="icon "><span class="title">Card</span><span class="hint"><a href="" target=""></a></span></li>
-                                                                </div>
-                                                        </section>
-                                                </div>
+                    <div class="ct" id="t3">
+                        <div class="ct" id="t4">
+                            <div class="ct" id="t5">
+                                <div class="ct" id="t6">
+                                    <section class="sec">
+                                        <div class="page" id="p0">
+                                            <li class="icon "><span class="title">Culturathon</span><span
+                                                        class="hint"><img class="rounded mx-auto d-block pt-4"
+                                                                          alt=""></span></li>
                                         </div>
+                                        <div class="page" id="p1">
+                                            <li class="icon">{% include 'include/facebook.html.twig' %}<span
+                                                        class="title"></span><span class="hint"><a href="" target=""></a></span>
+                                            </li>
+                                        </div>
+                                        <div class="page" id="p2">
+                                            <li class="icon">{% include 'include/twitter.html.twig' %}<span
+                                                        class="title"></span><span class="hint"><a href=""
+                                                                                                   target=""></a></span>
+                                            </li>
+                                        </div>
+                                        <div class="page" id="p3">
+                                            <li class="icon ">{% include 'include/google.html.twig' %}<span class="title"></span><span class="hint"><a
+                                                            href="" target="">ana huna</a></span></li>
+                                        </div>
+                                        <div class="page" id="p4">
+                                            <li class="icon "><span class="title">Contact</span><span class="hint"><a
+                                                            href="" target=""></a></span></li>
+                                        </div>
+                                        <div class="page" id="p5">
+                                            <li class="icon "><span class="title">Message</span><span class="hint"><a
+                                                            href="" target=""></a></span></li>
+                                        </div>
+                                        <div class="page" id="p6">
+                                            <li class="icon "><span class="title">Card</span><span class="hint"><a
+                                                            href="" target=""></a></span></li>
+                                        </div>
+                                    </section>
                                 </div>
+                            </div>
                         </div>
+                    </div>
                 </div>
+            </div>
         </div>
-</div>
-{%  endblock %}
-        {% include 'include/footer.html.twig' %}
+    {% endblock %}
+    {% include 'include/footer.html.twig' %}
 {% endblock %}

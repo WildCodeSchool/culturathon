@@ -335,20 +335,20 @@ html, body, section, .page {
 #t6:target .page#p6 {
   transform: translateX(-590%);
 }
-#t1:target .page#p1,
-#t2:target .page#p1,
-#t3:target .page#p1,
-#t4:target .page#p1,
-#t5:target .page#p1,
-#t6:target .page#p1 {
+#t1:target .page#p0,
+#t2:target .page#p0,
+#t3:target .page#p0,
+#t4:target .page#p0,
+#t5:target .page#p0,
+#t6:target .page#p0 {
   background: $brown;
 }
-#t1:target .page#p1 .icon,
-#t2:target .page#p1 .icon,
-#t3:target .page#p1 .icon,
-#t4:target .page#p1 .icon,
-#t5:target .page#p1 .icon,
-#t6:target .page#p1 .icon{
+#t1:target .page#p0 .icon,
+#t2:target .page#p0 .icon,
+#t3:target .page#p0 .icon,
+#t4:target .page#p0 .icon,
+#t5:target .page#p0 .icon,
+#t6:target .page#p0 .icon{
   -webkit-filter: blur(3px);
   filter: blur(3px);
 }
